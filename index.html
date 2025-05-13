@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loading Demo</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #loader, #main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      /* Remove fixed positioning and full viewport sizing */
+      /* width: 100vw; height: 100vh; */
+      /* position: fixed; top: 0; left: 0; z-index: 10; */
+    }
+
+    #loader {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      font-size: 2rem;
+      color: #22223b;
+      transition: opacity 0.5s;
+      z-index: 10;
+    }
+
+    #loader > div {
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 24px;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    #loader img {
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 2px 8px rgba(31,38,135,0.12));
+    }
+
+    #main {
+      display: none;
+      z-index: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      padding: 3rem 4rem;
+      margin: auto;
+      max-width: 580px;
+      color: #22223b;
+      animation: fadeIn 1s ease;
+    }
+
+    #main h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      color: #3a0ca3;
+      text-shadow: 0 2px 8px rgba(58,12,163,0.08);
+    }
+
+    #main p {
+      font-size: 1.2rem;
+      color: #22223b;
+      margin: 0;
+      opacity: 0.85;
+    }
+
+      #main h1,
+  #main p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      #main {
+        padding: 2rem 1rem;
+        max-width: 95vw;
+      }
+      #loader > div {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div>
+      <img src="https://i.gifer.com/ZKZg.gif" alt="Loading..." width="100"/><br/>
+      Loading, please wait...
+    </div>
+  </div>
+
+  <div id="main">
+    <h1>✨ Welcome to the Site! ✨</h1>
+    <p>This content was revealed after a suspenseful 5 seconds.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
