@@ -17,3 +17,14 @@ This is the `client/src` portion of the repo. It houses the core front-end magic
 
 > No frameworks. No dependencies. Just good ol’ JS, HTML, and CSS.
 
+---
+
+## 🧪 License
+
+Feel free to use, modify, or remix. No pressure. Just give credit where credit's due. 😉
+
+---
+
+
+## 🚀 Support the Vibes  
+Smash that ⭐ star and fork this beauty — let’s build cool things together.
